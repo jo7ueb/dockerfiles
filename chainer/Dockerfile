@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.0-cudnn7-devel
+FROM nvidia/cuda:9.1-cudnn7-devel
 
 # install required packages
 RUN apt-get update -y && \
@@ -31,8 +31,8 @@ RUN conda update -y conda &&\
 # install required packages for deep learning
 RUN pip install \
     matplotlib \
-    cupy==2.3.0 \
-    chainer==3.3.0 \
+    cupy==2.4.0 \
+    chainer==3.4.0 \
     chainercv==0.8.0 \
     chainerrl==0.3.0 \
     jupyter \
