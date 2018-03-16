@@ -8,6 +8,8 @@ RUN apt-get update -y && \
     git \
     graphviz \
     curl \
+    libopenmpi-dev \
+    libopencv-dev \
     wget &&\
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
@@ -31,9 +33,11 @@ RUN conda update -y conda &&\
 # install required packages for deep learning
 RUN pip install \
     matplotlib \
+    opencv-python \
     cupy==2.4.0 \
     chainer==3.4.0 \
     chainercv==0.8.0 \
     chainerrl==0.3.0 \
+    chainermn==1.2.0 \
     jupyter \
     gprof2dot
