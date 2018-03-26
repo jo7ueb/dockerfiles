@@ -74,6 +74,10 @@ RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER && \
     fix-permissions $HOME && \
     fix-permissions $CONDA_DIR
 
+# set PATH/LD_LIBRARY_PATH for jovyan
+RUN echo "PATH=${PATH}" >> $HOME/.bashrc \
+    && echo "LD_LIBRARY_PATH=${LD_LIBRARY_PATH}" >> $HOME/.bashrc
+
 USER $NB_UID
 
 # Setup work directory for backward-compatibility
